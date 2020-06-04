@@ -10,6 +10,7 @@ import java.io.Serializable;
 
 
 
+
 import java.sql.*;
 import java.util.*;
 import javax.persistence.EntityManager;
@@ -86,9 +87,6 @@ public class SalesInvoice
     @Column( name = "misc_charge_memo" )
     private String miscChargeMemo = "";
     
-//    @Column( name = "invoiced" )
-//    private boolean invoiced ;
-    
     @Column( name = "memo" )
     private String memo = "";
     
@@ -125,24 +123,6 @@ public class SalesInvoice
     
     @Column(name="no_fak_pajak")
     private String noFakPajak;
-    
-//    @ManyToOne
-//    @JoinColumn( name = "bo_creator" )
-//    private UserCredential sysCreator;
-//    
-//    @ManyToOne
-//    @JoinColumn( name = "bo_updater" )
-//    private UserCredential sysUpdater;
-//    
-//    @Column( name = "bo_createdate" )
-//    @Temporal(javax.persistence.TemporalType.TIMESTAMP)  
-//    private Calendar sysCreateDate;
-//    
-//    @Column( name = "bo_updatedate" )
-//    @Temporal(javax.persistence.TemporalType.TIMESTAMP)      
-//    private Calendar sysUpdateDate;
-    
-    
         
     /** Creates a new instance of SalesOrder */
     public SalesInvoice ()
@@ -252,40 +232,6 @@ public class SalesInvoice
         items = _items;
     }
         
-    
-//    public UserCredential getSysCreator ()
-//    {
-//        return sysCreator;
-//    }
-//
-//    public void setSysCreator (UserCredential _userCreate)
-//    {
-//        sysCreator = _userCreate;
-//    }
-//
-//    public Calendar getSysCreateDate () { return sysCreateDate; }
-//
-//    public void setSysCreateDate (Calendar m_user_createdate)
-//    {
-//        sysCreateDate = m_user_createdate;
-//    }
-//
-//    public UserCredential getSysUpdater ()
-//    {
-//        return sysUpdater;
-//    }
-//
-//    public void setSysUpdater (UserCredential m_userModify)
-//    {
-//        sysUpdater = m_userModify;
-//    }
-//
-//    public Calendar getSysUpdateDate () { return sysUpdateDate; }
-//
-//    public void setSysUodateDate (Calendar _date)
-//    {
-//        sysUpdateDate = _date;
-//    }
 
 	public int getPaymentStatus ()
 	{

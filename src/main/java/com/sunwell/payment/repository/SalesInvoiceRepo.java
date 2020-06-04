@@ -17,7 +17,4 @@ public interface SalesInvoiceRepo extends JpaRepository<SalesInvoice, Long>, Jpa
 	
 	SalesInvoice findByInvoiceNo(String _no);
 	Page<SalesInvoice> findByIdCustomer(long _id, Pageable _page);
-//	Page<SalesInvoice> findByCustomer_FirstName(String _custName, Pageable _page);
-//	SalesInvoice findBySoNo(String _no);
-//	Page<SalesInvoice> findByCustomer_CustGroup_SystemId(int _id, Pageable _page);
 }

@@ -5,8 +5,6 @@ import java.util.Base64;
 
 public class Payment 
 {
-//	private String soNo;
-//	private int siId;
 	private long soId;
 	private String invoiceNo;
     private Integer paymentType;
@@ -14,15 +12,6 @@ public class Payment
     private Double paymentAmount;
     private String noFakPajak;
     private String imageData;
-    
-//	public String getSoNo ()
-//	{
-//		return soNo;
-//	}
-//	public void setSoNo (String _soNo)
-//	{
-//		soNo = _soNo;
-//	}
     
     public long getSoId ()
 	{
@@ -33,15 +22,6 @@ public class Payment
 		soId = _id;
 	}
 	
-//	public int getSiId ()
-//	{
-//		return soId;
-//	}
-//	public void setSiId (int _id)
-//	{
-//		soId = _id;
-//	}
-    
 	public String getInvoiceNo ()
 	{
 		return invoiceNo;
@@ -90,17 +70,4 @@ public class Payment
 	{
 		imageData = _imageData;
 	}
-	
-//	public PaymentImage getProductImage() {
-//    	if(imageData != null) {
-//    		System.out.println("Image data is not null");
-//    		PaymentImage pi = new PaymentImage();
-//    		pi.setProduct(p);
-//    		pi.setName(p.getName());
-//    		pi.setImageData(Base64.getDecoder ().decode (getImageData()));
-//    		return pi;
-//    	}
-//    	else
-//    		return null;
-//    }
 }

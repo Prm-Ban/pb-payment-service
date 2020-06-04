@@ -8,6 +8,7 @@ package com.sunwell.payment.model;
 import java.sql.*;
 
 
+
 import java.util.Arrays;
 import java.util.List;
 import javax.persistence.*;
@@ -64,31 +65,9 @@ public class SalesInvoiceItem
     /** Creates a new instance of SOItem */
     public SalesInvoiceItem ()
     {
-//    	parent = null;
-//        item = null;
-//        shipmentUsed = null ;
-//        metricUsed = null ;
-//        qty = 0.0 ;
-//        qtyInMetricUsed = 0.0 ;
+
     }
-    
-//    /** Creates a new instance of exist SOItem */
-//    public SalesInvoiceItem (SalesInvoice _si, Item _item)
-//    {
-//        parent = _si;
-//        item = _item;
-//        shipmentUsed = null ;
-//        qty = 0.0 ;
-//        qtyInMetricUsed = 0.0 ;
-//    }
-    
-//    public SalesOrder getSalesOrder () { return salesOrder; }
-//
-//    public void setItem (Item _item)
-//    {
-//        this.item = _item;
-//    }
-    
+   
     public SalesInvoice getParent () { return parent; }
 
     public void setParent (SalesInvoice m_so)

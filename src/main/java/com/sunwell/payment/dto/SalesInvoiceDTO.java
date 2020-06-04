@@ -7,12 +7,6 @@ package com.sunwell.payment.dto;
 
 import java.io.Serializable;
 
-
-
-
-
-
-
 import java.sql.*;
 import java.util.*;
 

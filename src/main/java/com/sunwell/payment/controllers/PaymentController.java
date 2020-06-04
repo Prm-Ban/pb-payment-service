@@ -5,6 +5,7 @@ import java.util.Arrays;
 
 
 
+
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -31,12 +32,11 @@ import com.sunwell.payment.dto.SalesInvoiceDTO;
 import com.sunwell.payment.model.Payment;
 import com.sunwell.payment.model.SalesInvoice;
 import com.sunwell.payment.services.SalesService;
-import com.sunwell.payment.utils.Filters;
 import com.sunwell.payment.utils.ServiceUtil;
 
 
 @RestController
-public class SalesController
+public class PaymentController
 {
 	@Autowired
 	SalesService salesSvc ;
@@ -99,44 +99,6 @@ public class SalesController
         return new ResponseEntity<Map<String,Object>>(retData, null, HttpStatus.OK);
     }
 	
-	@RequestMapping(value = "resources/salesinvoices", method = RequestMethod.GET,
-			produces = "application/json", params="criteria"
-	)
-    public ResponseEntity<Map<String,Object>> getSalesInvoices(
-    		@RequestHeader(value="Authorization", required = false) String _auth,
-    		@RequestParam(value="criteria") List<String> _filters,
-    		Pageable _page
-    		) throws Exception 
-    {
-		Map<String,Object> retData = null;
-	
-		try {
-			
-			Object mainData = null;
-    		Page<SalesInvoice> pageSI = null ;
-			int totalPages = 0;
-			long totalItems = 0;
-			Filters filters =  svcUtil.convertToFilters(_filters, SalesInvoice.class);			
-			pageSI = salesSvc.findSalesInvoices(filters, _page);
-			if(pageSI != null && pageSI.getNumberOfElements() > 0) {
-            	totalPages = pageSI.getTotalPages();
-            	totalItems = pageSI.getTotalElements();
-            	List<SalesInvoice> salesInvoices = pageSI.getContent();            	
-            	List<SalesInvoiceDTO> listSIDTO = new LinkedList<>();
-            	for(SalesInvoice s : salesInvoices) {
-            		listSIDTO.add(new SalesInvoiceDTO(s));
-            	}
-            	mainData = listSIDTO;
-        	}
-            
-            retData = svcUtil.returnSuccessfulData(mainData, totalPages, totalItems);
-		}
-		catch(Exception e) {
-			retData = svcUtil.handleException(e);
-		}
-		
-        return new ResponseEntity<Map<String,Object>>(retData, null, HttpStatus.OK);
-    }
 	
 	@RequestMapping(value = "resources/salesinvoices", method = RequestMethod.POST,
 			consumes = "application/json", produces = "application/json"

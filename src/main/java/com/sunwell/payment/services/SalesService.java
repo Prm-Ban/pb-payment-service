@@ -3,15 +3,10 @@ package com.sunwell.payment.services;
 
 import java.lang.reflect.Field;
 
-
-
 import java.lang.reflect.Method;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-
-
-
 
 import java.util.LinkedList;
 import java.util.List;
@@ -41,8 +36,6 @@ import com.sunwell.payment.model.Payment;
 import com.sunwell.payment.model.SalesInvoice;
 import com.sunwell.payment.model.SalesInvoiceItem;
 import com.sunwell.payment.model.SalesInvoiceItemPK;
-import com.sunwell.payment.utils.Filters;
-
 
 
 
@@ -54,7 +47,6 @@ public interface SalesService
 	public SalesInvoice findSalesInvoiceByNo(String _no) throws Exception ;
 	public Page<SalesInvoice> findAllSalesInvoice(Pageable _page) throws Exception ;
 	public Page<SalesInvoice> findSalesInvoicesByCustId(Long _id, Pageable _page) throws Exception ;
-	public Page<SalesInvoice> findSalesInvoices(Filters _f, Pageable _page) throws Exception ;
 	public SalesInvoice deleteSalesInvoice(@NotNull(message="{error_no_id}") Long _id) throws Exception ;
 	public SalesInvoiceItem findSalesInvoiceItem(@NotNull(message="{error_no_id}")SalesInvoiceItemPK _pk) throws Exception ;
 	public Page<SalesInvoiceItem> findSalesInvoiceItemByParent(SalesInvoice _si, Pageable _page) throws Exception ;

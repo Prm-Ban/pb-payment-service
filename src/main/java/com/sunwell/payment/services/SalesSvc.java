@@ -1,11 +1,6 @@
 package com.sunwell.payment.services;
 
-
 import java.lang.reflect.Field;
-
-
-
-
 import java.lang.reflect.Method;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
@@ -46,8 +41,6 @@ import com.sunwell.payment.model.SalesInvoiceItemPK;
 import com.sunwell.payment.repository.PaymentImageRepo;
 import com.sunwell.payment.repository.SalesInvoiceItemRepo;
 import com.sunwell.payment.repository.SalesInvoiceRepo;
-import com.sunwell.payment.utils.Filters;
-import com.sunwell.payment.utils.SalesInvoiceSpecification;
 import com.sunwell.payment.utils.StandardConstant;
 
 
@@ -162,11 +155,6 @@ public class SalesSvc implements SalesService
 			if(pi != null)
 				deletePaymentImage(si);
 		}
-//		if(_pi != null)
-//			editPaymentImage(_pi);
-//		else
-//			deletePaymentImage(_pi.getSalesInvoice());
-		
 		return si;
     }
 		
@@ -184,10 +172,6 @@ public class SalesSvc implements SalesService
 	
 	public Page<SalesInvoice> findSalesInvoicesByCustId(Long _id, Pageable _page) {
 		return siRepo.findByIdCustomer(_id, _page);
-	}
-	
-	public Page<SalesInvoice> findSalesInvoices(Filters _f, Pageable _page) throws Exception {
-		return siRepo.findAll(new SalesInvoiceSpecification(_f), _page);
 	}
 	
 	public SalesInvoice deleteSalesInvoice(@NotNull(message="{error_no_id}") Long _id) {
